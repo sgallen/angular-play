@@ -8,6 +8,14 @@
   <body>
     <div ng-app="app">
       <h1>Services</h1>
+      <h2>Add items to the list.</h2>
+      <div ng-controller="PostCtrl as pc">
+        <form ng-submit="pc.addMessage(pc.newMessage)">
+          <input type="text" ng-model="pc.newMessage">
+          <button type="submit">Add Message</button>
+        </form>
+      </div>
+      <h2>List items.</h2>
       <div ng-controller="ListCtrl as lc">
         <p ng-repeat="message in lc.messages">
           {{ message.id }}: {{ message.text }}

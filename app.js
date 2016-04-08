@@ -14,3 +14,14 @@ app.controller('ListCtrl', function(messages) {
 
     self.messages = messages.list;
 });
+
+app.controller('PostCtrl', function(messages) {
+    var self = this;
+
+    self.newMessage = '';
+    self.addMessage = function(message) {
+        messages.add(message);
+        self.newMessage = '';
+    };
+
+});
